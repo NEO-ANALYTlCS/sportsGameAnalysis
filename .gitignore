@@ -153,3 +153,6 @@ data/*.csv
 
 # Postgres dumps or backups
 *.bak
+
+# misc 
+*.db

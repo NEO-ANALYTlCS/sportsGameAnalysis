@@ -47,3 +47,4 @@ https://api.sportradar.com/tennis/trial/v3/en/competitions.json
 ## Competitor Rankings & Analytics Module (author: Nirmaldas Patel)
 
 ## Streamlit Application & Dashboard Module (author: Manasvi Shetty)
+
