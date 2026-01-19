@@ -45,6 +45,38 @@ https://api.sportradar.com/tennis/trial/v3/en/competitions.json
 ## Complexes & Venues Module (author: Shrawani)
 
 ## Competitor Rankings & Analytics Module (author: Nirmaldas Patel)
+This module extracts ranking data from the SportRadar Tennis API and analysis it with SQL queries.
+
+### API Endpoint
+https://api.sportradar.com/tennis/trial/v3/en/double_competitors_rankings.json
+
+### Steps to Run
+1. Add API key to `.env`
+2. Run:
+   python fetch_competitions.py
+   python parse_competitions.py
+   python insert_data.py
+
+### Output
+- SQLite database: rankings.db
+- Tables: competitors, competitors_rankings
+
+### Folder Structure
+```competition_module/
+├── src/
+│   ├── app/              streamlit application
+│   ├── queries/
+│   │  └── db_schema.sql  sql queries
+│   ├── scripts/
+│   │  ├── fetch_rankings.py
+│   │  ├── parse_rankings.py
+│   │  └── insert_rankings.py  
+├── .env.example
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
 
 ## Streamlit Application & Dashboard Module (author: Manasvi Shetty)
 
