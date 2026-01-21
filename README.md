@@ -9,6 +9,14 @@
 ├── README.md
 └── requirements.txt
 ```
+### Instructions:
+To install dependencies
+   run:
+      pip install -r requirements.txt
+To create a virtual enviornment (recommended)
+   run:
+      python -m venv venv
+      ./venv/Scripts/activate <--- to activate venv
 
 ## Competition Module (author: Akanksha Yadav)
 
