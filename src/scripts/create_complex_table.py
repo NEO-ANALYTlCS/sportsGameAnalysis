@@ -25,4 +25,5 @@ CREATE TABLE IF NOT EXISTS venues (
 
 conn.commit()
 conn.close()
-print("✅ complexes and venues tables created")
+print("complexes and venues tables created")
+
