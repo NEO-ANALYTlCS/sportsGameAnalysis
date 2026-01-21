@@ -1,8 +1,8 @@
-import sqlite3
+import sqlite3, os
 from parse_rankings import parse_rankings
 
-DB_NAME = "rankings.db"
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "competition.db")
 
 def create_tables(cursor):
     cursor.executescript(
@@ -27,15 +27,15 @@ def create_tables(cursor):
     """
     )
 
-
 def insert_data():
     competitors, rankings = parse_rankings()
     print(f"Total competitors: {len(competitors)}, Total rankings: {len(rankings)}")
 
-    conn = sqlite3.connect(DB_NAME)
+    # IMPORTANT: use DB_PATH
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
-    # ✅ Enable foreign keys immediately
+    # Enable foreign keys
     cursor.execute("PRAGMA foreign_keys = ON;")
 
     create_tables(cursor)
@@ -57,7 +57,7 @@ def insert_data():
             ),
         )
 
-    # Insert rankings — only if competitor_id exists
+    # Insert rankings
     for r in rankings:
         cursor.execute(
             """
@@ -74,14 +74,13 @@ def insert_data():
                 r["points"],
                 r["competitions_played"],
                 r["competitor_id"],
-                r["competitor_id"],  # check exists
+                r["competitor_id"],
             ),
         )
 
     conn.commit()
     conn.close()
-    print("✅ Competitor rankings inserted successfully")
-
+    print("✅ Competitor rankings inserted into src/scripts/competition.db")
 
 if __name__ == "__main__":
     insert_data()

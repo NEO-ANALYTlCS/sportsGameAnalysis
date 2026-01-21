@@ -5,8 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.getenv("SPORTRADAR_API_KEY")
+if not API_KEY:
+    raise ValueError("API key not found")
 
-URL = "https://api.sportradar.com/tennis/trial/v3/en/competitions.json"
+URL = os.getenv("COMPETITIONS_URL")
+if not URL:
+    raise ValueError("URL not found")
 
 def fetch_competitions():
     response = requests.get(

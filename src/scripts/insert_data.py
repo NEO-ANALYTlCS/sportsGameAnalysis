@@ -1,7 +1,8 @@
-import sqlite3
+import sqlite3, os
 from parse_competitions import parse_competitions
 
-DB_NAME = "competition.db"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "competition.db")
 
 def create_tables(cursor):
     cursor.executescript("""
@@ -23,7 +24,9 @@ def create_tables(cursor):
 
 def insert_data():
     categories, competitions = parse_competitions()
-    conn = sqlite3.connect(DB_NAME)
+
+    # IMPORTANT: use DB_PATH
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
     create_tables(cursor)
@@ -51,7 +54,7 @@ def insert_data():
 
     conn.commit()
     conn.close()
-    print("✅ DATA INSERTED INTO competition.db")
+    print("✅ DATA INSERTED INTO src/scripts/competition.db")
 
 if __name__ == "__main__":
     insert_data()

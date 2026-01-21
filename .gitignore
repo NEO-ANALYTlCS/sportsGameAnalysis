@@ -156,3 +156,4 @@ data/*.csv
 
 # misc 
 *.db
+*.json

@@ -32,3 +32,18 @@ CREATE TABLE IF NOT EXISTS competitor_rankings (
     competitor_id VARCHAR(50) NOT NULL,
     FOREIGN KEY (competitor_id) REFERENCES competitors(competitor_id)
 );
+
+-- Complexes and Venues Schema
+CREATE TABLE IF NOT EXISTS complexes (
+    complex_id TEXT PRIMARY KEY,
+    complex_name TEXT,
+    country TEXT,
+    timezone TEXT
+);
+
+CREATE TABLE IF NOT EXISTS venues (
+    venue_id TEXT PRIMARY KEY,
+    venue_name TEXT,
+    complex_id TEXT,
+    FOREIGN KEY (complex_id) REFERENCES complexes(complex_id)
+);

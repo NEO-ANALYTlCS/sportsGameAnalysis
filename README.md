@@ -80,3 +80,45 @@ https://api.sportradar.com/tennis/trial/v3/en/double_competitors_rankings.json
 
 ## Streamlit Application & Dashboard Module (author: Manasvi Shetty)
 
+This module integrates all datasets from the SQLite database and displays them through an interactive Streamlit dashboard.
+
+## Features
+
+- KPI Dashboard (total competitors, countries, highest points)
+- Competitor search and filters (rank, country, points)
+- Leaderboards (top ranked, highest points)
+- Country-wise analysis with charts and geo map
+- Infrastructure analysis (complexes & venues)
+- Interactive visualizations using Plotly
+- Modern dark-themed UI with cards and sidebar navigation
+
+## Technologies Used
+
+1. Streamlit
+2. Pandas
+3. Plotly
+4. SQLite
+5. Python
+
+### Folder Structure
+```streamlit_module
+├── src/
+│   ├── app/
+│   │   ├── app.py              streamlit main file
+│   │   └── assets/
+│   │       └── bg.jpg          background image
+│   ├── scripts/
+│   │   └── competition.db
+├── .env.example
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
+## How to Run
+
+- streamlit run src/app/app.py
+
+## Output
+
+An interactive web dashboard for analyzing professional tennis data.

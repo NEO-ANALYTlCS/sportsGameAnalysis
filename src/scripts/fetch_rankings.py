@@ -5,7 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.getenv("SPORTRADAR_API_KEY")
+if not API_KEY:
+    raise ValueError("API key not found")
+
 URL = os.getenv("RANKINGS_URL")
+if not URL:
+    raise ValueError("URL not found")
 
 
 def fetch_rankings():
