@@ -54,7 +54,7 @@ def insert_data():
 
     conn.commit()
     conn.close()
-    print("✅ DATA INSERTED INTO src/scripts/competition.db")
+    print("DATA INSERTED INTO src/scripts/competition.db")
 
 if __name__ == "__main__":
     insert_data()

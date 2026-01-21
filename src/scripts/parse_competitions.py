@@ -30,7 +30,7 @@ def parse_competitions():
 if __name__ == "__main__":
     categories, competitions = parse_competitions()
 
-    print("✅ PARSING SUCCESSFUL")
+    print("PARSING SUCCESSFUL")
     print("Total categories:", len(categories))
     print("Total competitions:", len(competitions))
     print("\nSample category:", list(categories.items())[0])

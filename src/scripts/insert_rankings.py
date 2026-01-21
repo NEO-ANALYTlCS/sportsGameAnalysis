@@ -80,7 +80,7 @@ def insert_data():
 
     conn.commit()
     conn.close()
-    print("✅ Competitor rankings inserted into src/scripts/competition.db")
+    print("Competitor rankings inserted into src/scripts/competition.db")
 
 if __name__ == "__main__":
     insert_data()

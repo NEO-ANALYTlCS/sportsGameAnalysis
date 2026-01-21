@@ -42,7 +42,7 @@ def parse_rankings():
 if __name__ == "__main__":
     competitors, rankings = parse_rankings()
 
-    print("✅ Parsing successful")
+    print("Parsing successful")
     print("Total competitors:", len(competitors))
     print("Total rankings:", len(rankings))
     print("First competitor:", list(competitors.values())[0])

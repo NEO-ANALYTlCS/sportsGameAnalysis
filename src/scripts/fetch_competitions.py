@@ -23,6 +23,6 @@ def fetch_competitions():
 
 if __name__ == "__main__":
     data = fetch_competitions()
-    print("✅ API USED SUCCESSFULLY")
+    print("API USED SUCCESSFULLY")
     print("Total competitions:", len(data))
     print("Sample record:", data[0])
